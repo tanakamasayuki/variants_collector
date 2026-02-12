@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 0.1.2
 - en: Added M5Unified-based override generator and support for layered overrides.
 - ja: M5Unified ベースの上書きジェネレーターと多層上書きサポートを追加
 - en: Improved override type inference and alias expansion.
