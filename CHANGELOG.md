@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 0.1.1
 - en: Initial release
 - ja: 初版リリース
 - en: Header-only board variant definition library
