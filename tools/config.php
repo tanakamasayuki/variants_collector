@@ -12,6 +12,13 @@ return array(
     // Work directory for downloads/extraction.
     'work_dir' => sys_get_temp_dir() . '/arduiono-variants-work',
 
+    // Optional override files for merged results.
+    // Applied in order: first overrides_m5.json, then overrides.json.
+    'overrides_paths' => array(
+        __DIR__ . '/overrides_m5.json',
+        __DIR__ . '/overrides.json',
+    ),
+
     // Mapping from build.mcu to SOC_GPIO_PIN_COUNT.
     // If build.mcu is not present here, the script will stop with an error.
     'mcu_gpio_counts' => array(

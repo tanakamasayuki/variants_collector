@@ -141,10 +141,43 @@ void setup() {
 ```bash
 php tools/collect.php
 php tools/merge.php
+php tools/generate_overrides_m5.php
+php tools/merge.php
 php tools/generate_header.php
 ```
 
 既定のパッケージインデックスは `tools/config.php` に定義されています。
+
+### 上書き設定
+
+FQBN ごとにピン定義を上書き・追加したい場合は `tools/` の上書きファイルを使用します。
+適用順は `tools/overrides_m5.json` を先に、最後に `tools/overrides.json` です。
+同名のピンが存在する場合は上書き、存在しない場合は追加になります。
+
+例:
+
+```json
+{
+  "esp32:esp32:m5stack_atoms3": {
+    "pins": {
+      "builtin_led": { "type": "uint8_t", "value": 38 },
+      "user_led": 39
+    },
+    "info": {
+      "name": "M5Stack Atom S3 (override example)",
+      "build_mcu": "esp32s3"
+    }
+  }
+}
+```
+
+上書きファイルのパスは `tools/config.php` の `overrides_paths` で設定します。
+
+`tools/overrides_m5.json` は M5Unified から自動生成できます。
+
+```bash
+php tools/generate_overrides_m5.php
+```
 
 ## ライセンス
 
