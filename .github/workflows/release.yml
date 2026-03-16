@@ -5,6 +5,11 @@ on:
     - cron: "0 0 * * 1"
   workflow_dispatch:
     inputs:
+      force_release:
+        description: "Force a release even when generated files have no changes"
+        required: false
+        default: false
+        type: boolean
       version_level:
         description: "Version component to bump when forcing a release (major, minor, patch)"
         required: false
@@ -61,12 +66,12 @@ jobs:
 
       - name: Bump version
         id: version
-        if: github.event_name == 'workflow_dispatch' || steps.changes.outputs.has_changes == 'true'
+        if: steps.changes.outputs.has_changes == 'true' || github.event.inputs.force_release == 'true'
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            LEVEL="patch"
-          else
+          if [ "${{ github.event.inputs.force_release }}" = "true" ]; then
             LEVEL="${{ github.event.inputs.version_level || 'patch' }}"
+          else
+            LEVEL="patch"
           fi
           OUT=$(python tools/bump_version.py --level "$LEVEL")
           VERSION=$(printf '%s\n' "$OUT" | sed -n '1p')
