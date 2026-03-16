@@ -22002,6 +22002,108 @@ namespace variants_collector
   {
     namespace esp32
     {
+      namespace m5stack_stamp_c6lora
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "m5stack:esp32:m5stack_stamp_c6lora";
+          static inline constexpr const char *name = "M5StampC6LoRa";
+          static inline constexpr const char *build_mcu = "esp32c6";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 31;
+          static inline constexpr uint16_t usb_vid = 12346;
+          static inline constexpr uint16_t usb_pid = 4097;
+          static inline constexpr uint8_t tx = 16;
+          static inline constexpr uint8_t rx = 17;
+          static inline constexpr uint8_t ex_scl = 4;
+          static inline constexpr uint8_t ex_sda = 5;
+          static inline constexpr uint8_t in_scl = 8;
+          static inline constexpr uint8_t in_sda = 10;
+          static inline constexpr uint8_t a1 = 1;
+          static inline constexpr uint8_t a2 = 2;
+          static inline constexpr uint8_t a3 = 3;
+          static inline constexpr uint8_t a4 = 4;
+          static inline constexpr uint8_t a5 = 5;
+          static inline constexpr uint8_t a6 = 6;
+          static inline constexpr uint8_t sda1 = 6;
+          static inline constexpr uint8_t scl1 = 7;
+          static inline constexpr const char *usb_manufacturer = "M5Stack";
+          static inline constexpr const char *usb_product = "Stamp C6LoRa";
+        };
+      } // namespace m5stack_stamp_c6lora
+    } // namespace esp32
+  } // namespace m5stack
+
+  namespace m5stack
+  {
+    namespace esp32
+    {
+      namespace m5stack_stamp_p4
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "m5stack:esp32:m5stack_stamp_p4";
+          static inline constexpr const char *name = "M5StampP4";
+          static inline constexpr const char *build_mcu = "esp32p4";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 55;
+          static inline constexpr uint8_t tx = 37;
+          static inline constexpr uint8_t rx = 38;
+          static inline constexpr uint8_t ex_scl = 54;
+          static inline constexpr uint8_t ex_sda = 53;
+          static inline constexpr uint8_t in_scl = 32;
+          static inline constexpr uint8_t in_sda = 31;
+          static inline constexpr uint8_t a1 = 17;
+          static inline constexpr uint8_t a2 = 18;
+          static inline constexpr uint8_t a3 = 19;
+          static inline constexpr uint8_t a4 = 20;
+          static inline constexpr uint8_t a5 = 21;
+          static inline constexpr uint8_t a6 = 22;
+          static inline constexpr uint8_t a7 = 23;
+          static inline constexpr uint8_t a8 = 49;
+          static inline constexpr uint8_t a9 = 50;
+          static inline constexpr uint8_t a10 = 51;
+          static inline constexpr uint8_t a11 = 52;
+          static inline constexpr uint8_t a12 = 53;
+          static inline constexpr uint8_t a13 = 54;
+          static inline constexpr uint8_t t0 = 2;
+          static inline constexpr uint8_t t1 = 3;
+          static inline constexpr uint8_t t2 = 4;
+          static inline constexpr uint8_t t3 = 5;
+          static inline constexpr uint8_t t4 = 6;
+          static inline constexpr uint8_t t5 = 7;
+          static inline constexpr uint8_t t6 = 8;
+          static inline constexpr uint8_t t7 = 9;
+          static inline constexpr uint8_t t8 = 10;
+          static inline constexpr uint8_t t9 = 11;
+          static inline constexpr uint8_t t10 = 12;
+          static inline constexpr uint8_t t11 = 13;
+          static inline constexpr uint8_t t12 = 14;
+          static inline constexpr uint8_t t13 = 15;
+          static inline constexpr uint8_t board_sdio_esp_hosted_clk = 12;
+          static inline constexpr uint8_t board_sdio_esp_hosted_cmd = 13;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d0 = 11;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d1 = 10;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d2 = 9;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d3 = 8;
+          static inline constexpr uint8_t board_sdio_esp_hosted_reset = 15;
+          static inline constexpr const char *usb_manufacturer = "M5Stack";
+          static inline constexpr const char *usb_product = "Stamp-P4";
+        };
+      } // namespace m5stack_stamp_p4
+    } // namespace esp32
+  } // namespace m5stack
+
+  namespace m5stack
+  {
+    namespace esp32
+    {
       namespace m5stack_stamp_pico
       {
         struct Info
@@ -22106,6 +22208,61 @@ namespace variants_collector
           static inline constexpr const char *usb_product = "Stamp-S3";
         };
       } // namespace m5stack_stamp_s3
+    } // namespace esp32
+  } // namespace m5stack
+
+  namespace m5stack
+  {
+    namespace esp32
+    {
+      namespace m5stack_stamp_s3bat
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "m5stack:esp32:m5stack_stamp_s3bat";
+          static inline constexpr const char *name = "M5StampS3Bat";
+          static inline constexpr const char *build_mcu = "esp32s3";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 49;
+          static inline constexpr uint16_t usb_vid = 12346;
+          static inline constexpr uint16_t usb_pid = 4097;
+          static inline constexpr uint8_t external_num_interrupts = 46;
+          static inline constexpr uint8_t num_digital_pins = 48;
+          static inline constexpr uint8_t num_analog_inputs = 20;
+          static inline constexpr uint8_t tx = 43;
+          static inline constexpr uint8_t rx = 44;
+          static inline constexpr uint8_t txd2 = 1;
+          static inline constexpr uint8_t rxd2 = 2;
+          static inline constexpr uint8_t ex_scl = 10;
+          static inline constexpr uint8_t ex_sda = 9;
+          static inline constexpr uint8_t in_scl = 48;
+          static inline constexpr uint8_t in_sda = 47;
+          static inline constexpr uint8_t g0 = 0;
+          static inline constexpr uint8_t g1 = 1;
+          static inline constexpr uint8_t g2 = 2;
+          static inline constexpr uint8_t g3 = 3;
+          static inline constexpr uint8_t g4 = 4;
+          static inline constexpr uint8_t g5 = 5;
+          static inline constexpr uint8_t g6 = 6;
+          static inline constexpr uint8_t g7 = 7;
+          static inline constexpr uint8_t g8 = 8;
+          static inline constexpr uint8_t g36 = 36;
+          static inline constexpr uint8_t g37 = 37;
+          static inline constexpr uint8_t g38 = 38;
+          static inline constexpr uint8_t g39 = 39;
+          static inline constexpr uint8_t g40 = 40;
+          static inline constexpr uint8_t g42 = 42;
+          static inline constexpr uint8_t adc1 = 7;
+          static inline constexpr uint8_t adc2 = 8;
+          static inline constexpr const char *usb_manufacturer = "M5Stack";
+          static inline constexpr const char *usb_product = "Stamp-S3Bat";
+          static inline constexpr uint8_t builtin_led = 97;
+          static inline constexpr uint8_t rgb_builtin = 97;
+        };
+      } // namespace m5stack_stamp_s3bat
     } // namespace esp32
   } // namespace m5stack
 
@@ -22881,6 +23038,67 @@ namespace variants_collector
           static inline constexpr const char *usb_product = "Unit CamS3";
         };
       } // namespace m5stack_unit_cams3
+    } // namespace esp32
+  } // namespace m5stack
+
+  namespace m5stack
+  {
+    namespace esp32
+    {
+      namespace m5stack_unit_poe_p4
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "m5stack:esp32:m5stack_unit_poe_p4";
+          static inline constexpr const char *name = "M5UnitPoEP4";
+          static inline constexpr const char *build_mcu = "esp32p4";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 55;
+          static inline constexpr uint8_t tx = 37;
+          static inline constexpr uint8_t rx = 38;
+          static inline constexpr uint8_t ex_scl = 54;
+          static inline constexpr uint8_t ex_sda = 53;
+          static inline constexpr uint8_t in_scl = 1;
+          static inline constexpr uint8_t in_sda = 0;
+          static inline constexpr uint8_t a1 = 17;
+          static inline constexpr uint8_t a2 = 18;
+          static inline constexpr uint8_t a3 = 19;
+          static inline constexpr uint8_t a4 = 20;
+          static inline constexpr uint8_t a5 = 21;
+          static inline constexpr uint8_t a6 = 22;
+          static inline constexpr uint8_t a7 = 23;
+          static inline constexpr uint8_t a8 = 49;
+          static inline constexpr uint8_t a9 = 50;
+          static inline constexpr uint8_t a10 = 51;
+          static inline constexpr uint8_t a11 = 52;
+          static inline constexpr uint8_t a12 = 53;
+          static inline constexpr uint8_t a13 = 54;
+          static inline constexpr uint8_t t0 = 2;
+          static inline constexpr uint8_t t1 = 3;
+          static inline constexpr uint8_t t2 = 4;
+          static inline constexpr uint8_t t3 = 5;
+          static inline constexpr uint8_t t4 = 6;
+          static inline constexpr uint8_t t5 = 7;
+          static inline constexpr uint8_t t6 = 8;
+          static inline constexpr uint8_t t7 = 9;
+          static inline constexpr uint8_t t8 = 10;
+          static inline constexpr uint8_t t9 = 11;
+          static inline constexpr uint8_t t10 = 12;
+          static inline constexpr uint8_t t11 = 13;
+          static inline constexpr uint8_t t12 = 14;
+          static inline constexpr uint8_t t13 = 15;
+          static inline constexpr uint8_t board_sdio_esp_hosted_clk = 12;
+          static inline constexpr uint8_t board_sdio_esp_hosted_cmd = 13;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d0 = 11;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d1 = 10;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d2 = 9;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d3 = 8;
+          static inline constexpr uint8_t board_sdio_esp_hosted_reset = 15;
+        };
+      } // namespace m5stack_unit_poe_p4
     } // namespace esp32
   } // namespace m5stack
 
