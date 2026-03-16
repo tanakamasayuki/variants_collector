@@ -627,5 +627,17 @@
             "port_c_pin2": 2,
             "port_c_txd": 2
         }
+    },
+    "m5stack:esp32:m5stack_unit_poe_p4": {
+        "pins": {
+            "in_i2c_scl": 1,
+            "in_i2c_sda": 0,
+            "port_a_pin1": 54,
+            "port_a_scl": 54,
+            "ex_i2c_scl": 54,
+            "port_a_pin2": 53,
+            "port_a_sda": 53,
+            "ex_i2c_sda": 53
+        }
     }
 }

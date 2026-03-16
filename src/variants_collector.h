@@ -23097,6 +23097,14 @@ namespace variants_collector
           static inline constexpr uint8_t board_sdio_esp_hosted_d2 = 9;
           static inline constexpr uint8_t board_sdio_esp_hosted_d3 = 8;
           static inline constexpr uint8_t board_sdio_esp_hosted_reset = 15;
+          static inline constexpr uint8_t in_i2c_scl = 1;
+          static inline constexpr uint8_t in_i2c_sda = 0;
+          static inline constexpr uint8_t port_a_pin1 = 54;
+          static inline constexpr uint8_t port_a_scl = 54;
+          static inline constexpr uint8_t ex_i2c_scl = 54;
+          static inline constexpr uint8_t port_a_pin2 = 53;
+          static inline constexpr uint8_t port_a_sda = 53;
+          static inline constexpr uint8_t ex_i2c_sda = 53;
         };
       } // namespace m5stack_unit_poe_p4
     } // namespace esp32
