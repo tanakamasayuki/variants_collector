@@ -1,6 +1,8 @@
 name: Release
 
 on:
+  schedule:
+    - cron: "0 0 * * 1"
   workflow_dispatch:
     inputs:
       version_level:
@@ -35,10 +37,37 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Generate variants data
+        run: |
+          php tools/collect.php
+          php tools/merge.php
+          php tools/generate_overrides_m5.php
+          php tools/merge.php
+          php tools/generate_header.php
+
+      - name: Detect generated changes
+        id: changes
+        run: |
+          if git diff --quiet -- tools/overrides_m5.json src/variants_collector.h; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Bump version
         id: version
+        if: github.event_name == 'workflow_dispatch' || steps.changes.outputs.has_changes == 'true'
         run: |
-          LEVEL="${{ github.event.inputs.version_level || 'patch' }}"
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            LEVEL="patch"
+          else
+            LEVEL="${{ github.event.inputs.version_level || 'patch' }}"
+          fi
           OUT=$(python tools/bump_version.py --level "$LEVEL")
           VERSION=$(printf '%s\n' "$OUT" | sed -n '1p')
           HEADER=$(printf '%s\n' "$OUT" | sed -n '2p')
@@ -46,7 +75,10 @@ jobs:
           echo "version_header=$HEADER" >> "$GITHUB_OUTPUT"
 
       - name: Stage files
+        if: steps.version.outcome == 'success'
         run: |
+          git add tools/overrides_m5.json
+          git add src/variants_collector.h
           git add library.properties
           if [ -f CHANGELOG.md ]; then
             git add CHANGELOG.md
@@ -58,14 +90,17 @@ jobs:
           fi
 
       - name: Commit changes
+        if: steps.version.outcome == 'success'
         run: |
           git commit -m "Release ${{ steps.version.outputs.version }}" || echo "No changes to commit."
 
       - name: Push default branch
+        if: steps.version.outcome == 'success'
         run: git push origin HEAD:"$DEFAULT_BRANCH"
 
       - name: Prepare release branch with release-only files
         id: release_branch
+        if: steps.version.outcome == 'success'
         env:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
@@ -80,6 +115,7 @@ jobs:
 
       - name: Build release archive
         id: archive
+        if: steps.version.outcome == 'success'
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           ARCHIVE="${{ github.event.repository.name }}-${VERSION}.zip"
@@ -96,6 +132,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: create_tag_and_push
+        if: steps.version.outcome == 'success'
         run: |
           TAG="v${{ steps.version.outputs.version }}"
           git checkout "$RELEASE_BRANCH"
