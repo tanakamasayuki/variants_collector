@@ -2721,6 +2721,34 @@ namespace variants_collector
   {
     namespace esp32
     {
+      namespace amyboard
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:amyboard";
+          static inline constexpr const char *name = "AMYboard";
+          static inline constexpr const char *build_mcu = "esp32s3";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 49;
+          static inline constexpr uint16_t usb_vid = 51952;
+          static inline constexpr uint8_t usb_pid = 1;
+          static inline constexpr uint8_t tx = 43;
+          static inline constexpr uint8_t rx = 44;
+          static inline constexpr const char *usb_manufacturer = "AMYboard";
+          static inline constexpr const char *usb_product = "AMYboard";
+          static inline constexpr bool usb_serial = true;
+        };
+      } // namespace amyboard
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
       namespace arduino_nesso_n1
       {
         struct Info
@@ -3121,6 +3149,77 @@ namespace variants_collector
           static inline constexpr uint8_t dac2 = 26;
         };
       } // namespace aw2eth
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
+      namespace axiometa_genesis_mini
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:axiometa_genesis_mini";
+          static inline constexpr const char *name = "Axiometa Genesis Mini";
+          static inline constexpr const char *build_mcu = "esp32s3";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 49;
+          static inline constexpr uint16_t usb_vid = 12346;
+          static inline constexpr uint16_t usb_pid = 4097;
+          static inline constexpr uint8_t rgb_led = 21;
+          static inline constexpr uint8_t user_button = 45;
+          static inline constexpr uint8_t bat_sense = 8;
+          static inline constexpr uint8_t bat_enable = 46;
+          static inline constexpr uint8_t bat_status = 34;
+          static inline constexpr uint8_t p1_io0 = 4;
+          static inline constexpr uint8_t p1_io1 = 3;
+          static inline constexpr uint8_t p1_io2 = 2;
+          static inline constexpr uint8_t p2_io0 = 7;
+          static inline constexpr uint8_t p2_io1 = 6;
+          static inline constexpr uint8_t p2_io2 = 5;
+          static inline constexpr uint8_t p3_io0 = 9;
+          static inline constexpr uint8_t p3_io1 = 16;
+          static inline constexpr uint8_t p3_io2 = 15;
+          static inline constexpr uint8_t p4_io0 = 1;
+          static inline constexpr uint8_t p4_io1 = 17;
+          static inline constexpr uint8_t p4_io2 = 18;
+          static inline constexpr uint8_t a1 = 2;
+          static inline constexpr uint8_t a2 = 3;
+          static inline constexpr uint8_t a3 = 4;
+          static inline constexpr uint8_t a4 = 5;
+          static inline constexpr uint8_t a5 = 6;
+          static inline constexpr uint8_t a6 = 7;
+          static inline constexpr uint8_t a7 = 8;
+          static inline constexpr uint8_t a8 = 9;
+          static inline constexpr uint8_t a9 = 10;
+          static inline constexpr uint8_t a10 = 11;
+          static inline constexpr uint8_t a11 = 12;
+          static inline constexpr uint8_t a12 = 13;
+          static inline constexpr uint8_t a13 = 14;
+          static inline constexpr uint8_t a14 = 15;
+          static inline constexpr uint8_t a15 = 16;
+          static inline constexpr uint8_t a16 = 17;
+          static inline constexpr uint8_t a17 = 18;
+          static inline constexpr uint8_t t1 = 1;
+          static inline constexpr uint8_t t2 = 2;
+          static inline constexpr uint8_t t3 = 3;
+          static inline constexpr uint8_t t4 = 4;
+          static inline constexpr uint8_t t5 = 5;
+          static inline constexpr uint8_t t6 = 6;
+          static inline constexpr uint8_t t7 = 7;
+          static inline constexpr uint8_t t8 = 8;
+          static inline constexpr uint8_t t9 = 9;
+          static inline constexpr uint8_t t10 = 10;
+          static inline constexpr uint8_t t11 = 11;
+          static inline constexpr uint8_t t12 = 12;
+          static inline constexpr uint8_t t13 = 13;
+          static inline constexpr uint8_t t14 = 14;
+        };
+      } // namespace axiometa_genesis_mini
     } // namespace esp32
   } // namespace esp32
 
@@ -4854,6 +4953,55 @@ namespace variants_collector
   {
     namespace esp32
     {
+      namespace dfrobot_firebeetle2_esp32c5
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:dfrobot_firebeetle2_esp32c5";
+          static inline constexpr const char *name = "DFRobot Firebeetle 2 ESP32-C5";
+          static inline constexpr const char *build_mcu = "esp32c5";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 29;
+          static inline constexpr uint8_t tx = 11;
+          static inline constexpr uint8_t rx = 12;
+          static inline constexpr uint8_t a1 = 2;
+          static inline constexpr uint8_t a2 = 3;
+          static inline constexpr uint8_t a3 = 4;
+          static inline constexpr uint8_t a4 = 5;
+          static inline constexpr uint8_t d2 = 8;
+          static inline constexpr uint8_t d3 = 26;
+          static inline constexpr uint8_t d6 = 27;
+          static inline constexpr uint8_t d9 = 28;
+          static inline constexpr uint8_t d11 = 7;
+          static inline constexpr uint8_t d12 = 6;
+          static inline constexpr uint8_t d13 = 15;
+          static inline constexpr int8_t gdi_fcs = -1;
+          static inline constexpr int8_t gdi_busy_te = -1;
+          static inline constexpr uint8_t builtin_led = 15;
+          static inline constexpr uint8_t gdi_blk = 15;
+          static inline constexpr uint8_t gdi_spi_sclk = 23;
+          static inline constexpr uint8_t gdi_spi_mosi = 24;
+          static inline constexpr uint8_t gdi_spi_miso = 25;
+          static inline constexpr uint8_t gdi_dc = 8;
+          static inline constexpr uint8_t gdi_res = 26;
+          static inline constexpr uint8_t gdi_cs = 27;
+          static inline constexpr uint8_t gdi_sdcs = 3;
+          static inline constexpr uint8_t gdi_tcs = 6;
+          static inline constexpr uint8_t gdi_scl = 10;
+          static inline constexpr uint8_t gdi_sda = 9;
+          static inline constexpr uint8_t gdi_int = 7;
+        };
+      } // namespace dfrobot_firebeetle2_esp32c5
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
       namespace dfrobot_firebeetle2_esp32c6
       {
         struct Info
@@ -4963,6 +5111,54 @@ namespace variants_collector
           static inline constexpr uint8_t builtin_led = 2;
         };
       } // namespace dfrobot_firebeetle2_esp32e
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
+      namespace dfrobot_firebeetle2_esp32p4
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:dfrobot_firebeetle2_esp32p4";
+          static inline constexpr const char *name = "DFRobot FireBeetle 2 ESP32-P4";
+          static inline constexpr const char *build_mcu = "esp32p4";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 55;
+          static inline constexpr uint8_t tx = 37;
+          static inline constexpr uint8_t rx = 38;
+          static inline constexpr uint8_t a1 = 21;
+          static inline constexpr uint8_t a2 = 22;
+          static inline constexpr uint8_t a3 = 23;
+          static inline constexpr uint8_t a4 = 51;
+          static inline constexpr uint8_t a5 = 49;
+          static inline constexpr uint8_t a6 = 50;
+          static inline constexpr uint8_t a7 = 52;
+          static inline constexpr uint8_t t0 = 4;
+          static inline constexpr uint8_t t1 = 5;
+          static inline constexpr uint8_t t2 = 7;
+          static inline constexpr uint8_t t3 = 8;
+          static inline constexpr uint8_t mic_i2s_clk = 12;
+          static inline constexpr uint8_t mic_i2s_data = 9;
+          static inline constexpr uint8_t board_sdmmc_slot = 0;
+          static inline constexpr uint8_t board_sdmmc_power_channel = 4;
+          static inline constexpr uint8_t board_sdmmc_power_pin = 45;
+          static inline constexpr uint8_t board_sdio_esp_hosted_clk = 18;
+          static inline constexpr uint8_t board_sdio_esp_hosted_cmd = 19;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d0 = 14;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d1 = 15;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d2 = 16;
+          static inline constexpr uint8_t board_sdio_esp_hosted_d3 = 17;
+          static inline constexpr uint8_t board_sdio_esp_hosted_reset = 54;
+          static inline constexpr uint8_t builtin_led = 3;
+          static inline constexpr uint8_t board_sdmmc_power_on_level = 0;
+        };
+      } // namespace dfrobot_firebeetle2_esp32p4
     } // namespace esp32
   } // namespace esp32
 
@@ -9140,6 +9336,75 @@ namespace variants_collector
   {
     namespace esp32
     {
+      namespace heltec_wifi_lora_32_v4
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:heltec_wifi_lora_32_V4";
+          static inline constexpr const char *name = "Heltec WiFi LoRa 32(V4)";
+          static inline constexpr const char *build_mcu = "esp32s3";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 49;
+          static inline constexpr uint8_t display_height = 64;
+          static inline constexpr uint8_t display_width = 128;
+          static inline constexpr uint16_t usb_vid = 12346;
+          static inline constexpr uint16_t usb_pid = 4097;
+          static inline constexpr uint8_t tx = 43;
+          static inline constexpr uint8_t rx = 44;
+          static inline constexpr uint8_t a1 = 2;
+          static inline constexpr uint8_t a2 = 3;
+          static inline constexpr uint8_t a3 = 4;
+          static inline constexpr uint8_t a4 = 5;
+          static inline constexpr uint8_t a5 = 6;
+          static inline constexpr uint8_t a6 = 7;
+          static inline constexpr uint8_t a7 = 8;
+          static inline constexpr uint8_t a8 = 9;
+          static inline constexpr uint8_t a9 = 10;
+          static inline constexpr uint8_t a10 = 11;
+          static inline constexpr uint8_t a11 = 12;
+          static inline constexpr uint8_t a12 = 13;
+          static inline constexpr uint8_t a13 = 14;
+          static inline constexpr uint8_t a14 = 15;
+          static inline constexpr uint8_t a15 = 16;
+          static inline constexpr uint8_t a16 = 17;
+          static inline constexpr uint8_t a17 = 18;
+          static inline constexpr uint8_t a18 = 19;
+          static inline constexpr uint8_t a19 = 20;
+          static inline constexpr uint8_t t1 = 1;
+          static inline constexpr uint8_t t2 = 2;
+          static inline constexpr uint8_t t3 = 3;
+          static inline constexpr uint8_t t4 = 4;
+          static inline constexpr uint8_t t5 = 5;
+          static inline constexpr uint8_t t6 = 6;
+          static inline constexpr uint8_t t7 = 7;
+          static inline constexpr uint8_t t8 = 8;
+          static inline constexpr uint8_t t9 = 9;
+          static inline constexpr uint8_t t10 = 10;
+          static inline constexpr uint8_t t11 = 11;
+          static inline constexpr uint8_t t12 = 12;
+          static inline constexpr uint8_t t13 = 13;
+          static inline constexpr uint8_t t14 = 14;
+          static inline constexpr uint8_t vext = 36;
+          static inline constexpr uint8_t led = 35;
+          static inline constexpr uint8_t rst_oled = 21;
+          static inline constexpr uint8_t scl_oled = 18;
+          static inline constexpr uint8_t sda_oled = 17;
+          static inline constexpr uint8_t rst_lora = 12;
+          static inline constexpr uint8_t busy_lora = 13;
+          static inline constexpr uint8_t dio0 = 14;
+          static inline constexpr uint8_t builtin_led = 35;
+        };
+      } // namespace heltec_wifi_lora_32_v4
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
       namespace heltec_wireless_bridge
       {
         struct Info
@@ -9650,6 +9915,68 @@ namespace variants_collector
           static inline constexpr uint8_t rgb_builtin = 97;
         };
       } // namespace heltec_wireless_tracker
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
+      namespace heltec_wireless_tracker_v2
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:heltec_wireless_tracker_v2";
+          static inline constexpr const char *name = "Heltec Wireless Tracker(V2)";
+          static inline constexpr const char *build_mcu = "esp32s3";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 49;
+          static inline constexpr uint16_t usb_vid = 12346;
+          static inline constexpr uint16_t usb_pid = 4097;
+          static inline constexpr uint8_t tx = 43;
+          static inline constexpr uint8_t rx = 44;
+          static inline constexpr uint8_t a1 = 2;
+          static inline constexpr uint8_t a2 = 3;
+          static inline constexpr uint8_t a3 = 4;
+          static inline constexpr uint8_t a4 = 5;
+          static inline constexpr uint8_t a5 = 6;
+          static inline constexpr uint8_t a6 = 7;
+          static inline constexpr uint8_t a7 = 8;
+          static inline constexpr uint8_t a8 = 9;
+          static inline constexpr uint8_t a9 = 10;
+          static inline constexpr uint8_t a10 = 11;
+          static inline constexpr uint8_t a11 = 12;
+          static inline constexpr uint8_t a12 = 13;
+          static inline constexpr uint8_t a13 = 14;
+          static inline constexpr uint8_t a14 = 15;
+          static inline constexpr uint8_t a15 = 16;
+          static inline constexpr uint8_t a16 = 17;
+          static inline constexpr uint8_t a17 = 18;
+          static inline constexpr uint8_t a18 = 19;
+          static inline constexpr uint8_t a19 = 20;
+          static inline constexpr uint8_t t1 = 1;
+          static inline constexpr uint8_t t2 = 2;
+          static inline constexpr uint8_t t3 = 3;
+          static inline constexpr uint8_t t4 = 4;
+          static inline constexpr uint8_t t5 = 5;
+          static inline constexpr uint8_t t6 = 6;
+          static inline constexpr uint8_t t7 = 7;
+          static inline constexpr uint8_t t8 = 8;
+          static inline constexpr uint8_t t9 = 9;
+          static inline constexpr uint8_t t10 = 10;
+          static inline constexpr uint8_t t11 = 11;
+          static inline constexpr uint8_t t12 = 12;
+          static inline constexpr uint8_t t13 = 13;
+          static inline constexpr uint8_t t14 = 14;
+          static inline constexpr uint8_t vext = 3;
+          static inline constexpr uint8_t led = 18;
+          static inline constexpr uint8_t builtin_led = 97;
+          static inline constexpr uint8_t rgb_builtin = 97;
+        };
+      } // namespace heltec_wireless_tracker_v2
     } // namespace esp32
   } // namespace esp32
 
@@ -14327,6 +14654,73 @@ namespace variants_collector
   {
     namespace esp32
     {
+      namespace ozobot_circuit_kit
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:ozobot_circuit_kit";
+          static inline constexpr const char *name = "Ozobot circuit kit";
+          static inline constexpr const char *build_mcu = "esp32s3";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 49;
+          static inline constexpr uint16_t usb_vid = 11649;
+          static inline constexpr uint16_t usb_pid = 6401;
+          static inline constexpr uint8_t d0 = 0;
+          static inline constexpr uint8_t d1 = 1;
+          static inline constexpr uint8_t d2 = 2;
+          static inline constexpr uint8_t d3 = 3;
+          static inline constexpr uint8_t d4 = 4;
+          static inline constexpr uint8_t d5 = 5;
+          static inline constexpr uint8_t d6 = 6;
+          static inline constexpr uint8_t d7 = 7;
+          static inline constexpr uint8_t d8 = 8;
+          static inline constexpr uint8_t d9 = 9;
+          static inline constexpr uint8_t d10 = 10;
+          static inline constexpr uint8_t d11 = 11;
+          static inline constexpr uint8_t d12 = 12;
+          static inline constexpr uint8_t d13 = 13;
+          static inline constexpr uint8_t d14 = 14;
+          static inline constexpr uint8_t d15 = 15;
+          static inline constexpr uint8_t d16 = 16;
+          static inline constexpr uint8_t d17 = 17;
+          static inline constexpr uint8_t d18 = 18;
+          static inline constexpr uint8_t d19 = 19;
+          static inline constexpr uint8_t d20 = 20;
+          static inline constexpr uint8_t d21 = 21;
+          static inline constexpr uint8_t d22 = 22;
+          static inline constexpr uint8_t d23 = 23;
+          static inline constexpr uint8_t a1 = 25;
+          static inline constexpr uint8_t a2 = 26;
+          static inline constexpr uint8_t a3 = 27;
+          static inline constexpr uint8_t a4 = 28;
+          static inline constexpr uint8_t a5 = 29;
+          static inline constexpr uint8_t a6 = 30;
+          static inline constexpr uint8_t a7 = 31;
+          static inline constexpr uint8_t a8 = 32;
+          static inline constexpr uint8_t a9 = 33;
+          static inline constexpr const char *usb_manufacturer = "OZOEDU";
+          static inline constexpr const char *usb_product = "Ozobot circuit kit";
+          static inline constexpr bool usb_serial = true;
+          static inline constexpr uint8_t tx = 43;
+          static inline constexpr uint8_t rx = 44;
+          static inline constexpr uint8_t motor_l_in1 = 18;
+          static inline constexpr uint8_t motor_l_in2 = 17;
+          static inline constexpr uint8_t motor_r_in1 = 21;
+          static inline constexpr uint8_t motor_r_in2 = 33;
+          static inline constexpr uint8_t button = 0;
+          static inline constexpr uint8_t rgb_led = 42;
+        };
+      } // namespace ozobot_circuit_kit
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
       namespace pandabyte_x32
       {
         struct Info
@@ -15011,29 +15405,27 @@ namespace variants_collector
           static inline constexpr uint8_t pins_soc_gpio_pin_count = 49;
           static inline constexpr uint16_t usb_vid = 12346;
           static inline constexpr uint16_t usb_pid = 33489;
-          static inline constexpr const char *usb_fw_msc_product_revision = "1.00";
+          static inline constexpr const char *usb_fw_msc_product_revision = "1.4";
           static inline constexpr uint8_t usb_fw_msc_serial_number = 0;
           static inline constexpr uint8_t pin_rgb_led = 45;
           static inline constexpr uint8_t rgbled_pin = 45;
           static inline constexpr uint8_t pin_led = 45;
           static inline constexpr uint8_t rgbled_num = 1;
-          static inline constexpr uint8_t pin_qwiic_sda = 2;
-          static inline constexpr uint8_t pin_qwiic_scl = 1;
+          static inline constexpr uint8_t pin_wire_sda = 2;
+          static inline constexpr uint8_t pin_wire_scl = 1;
+          static inline constexpr uint8_t pin_spi_mosi = 38;
+          static inline constexpr uint8_t pin_spi_miso = 40;
+          static inline constexpr uint8_t pin_spi_sck = 39;
+          static inline constexpr uint8_t pin_spi_ss = 41;
           static inline constexpr uint8_t pin_io14 = 14;
           static inline constexpr uint8_t pin_io48 = 48;
           static inline constexpr uint8_t pin_button = 47;
-          static inline constexpr uint8_t tx = 43;
-          static inline constexpr uint8_t rx = 44;
-          static inline constexpr uint8_t pin_uart_txd = 43;
-          static inline constexpr uint8_t pin_uart_rxd = 44;
-          static inline constexpr uint8_t pin_uart_enable = 26;
-          static inline constexpr uint8_t sd_enable = 3;
-          static inline constexpr uint8_t pin_sd_miso = 40;
-          static inline constexpr uint8_t pin_sd_mosi = 38;
-          static inline constexpr uint8_t pin_sd_sclk = 39;
+          static inline constexpr uint8_t button = 47;
           static inline constexpr uint8_t pin_sd_cs = 41;
+          static inline constexpr uint8_t pin_sd_sw = 42;
           static inline constexpr uint8_t pin_sd_enable = 3;
           static inline constexpr uint8_t pin_usb_dm = 19;
+          static inline constexpr uint8_t pin_usb_dn = 19;
           static inline constexpr uint8_t pin_usb_dp = 20;
           static inline constexpr uint8_t pwdn_gpio_num = 46;
           static inline constexpr int8_t reset_gpio_num = -1;
@@ -15051,20 +15443,44 @@ namespace variants_collector
           static inline constexpr uint8_t vsync_gpio_num = 6;
           static inline constexpr uint8_t href_gpio_num = 7;
           static inline constexpr uint8_t pclk_gpio_num = 13;
-          static inline constexpr uint8_t lora_tx = 43;
-          static inline constexpr uint8_t lora_rx = 44;
+          static inline constexpr uint8_t cam_pwdn = 46;
+          static inline constexpr int8_t cam_reset = -1;
+          static inline constexpr uint8_t cam_xmclk = 15;
+          static inline constexpr uint8_t cam_sda = 4;
+          static inline constexpr uint8_t cam_scl = 5;
+          static inline constexpr uint8_t cam_y9 = 16;
+          static inline constexpr uint8_t cam_y8 = 17;
+          static inline constexpr uint8_t cam_y7 = 18;
+          static inline constexpr uint8_t cam_y6 = 12;
+          static inline constexpr uint8_t cam_y5 = 10;
+          static inline constexpr uint8_t cam_y4 = 8;
+          static inline constexpr uint8_t cam_y3 = 9;
+          static inline constexpr uint8_t cam_y2 = 11;
+          static inline constexpr uint8_t cam_vsync = 6;
+          static inline constexpr uint8_t cam_href = 7;
+          static inline constexpr uint8_t cam_pclk = 13;
+          static inline constexpr uint8_t pin_lora_cs = 43;
+          static inline constexpr uint8_t pin_lora_int = 44;
           static inline constexpr const char *usb_manufacturer = "senseBox";
-          static inline constexpr const char *usb_product = "Eye ESP32S3";
+          static inline constexpr const char *usb_product = "Eye";
           static inline constexpr bool usb_serial = true;
           static inline constexpr const char *usb_fw_msc_vendor_id = "senseBox";
-          static inline constexpr const char *usb_fw_msc_product_id = "Eye ESP32S3";
-          static inline constexpr const char *usb_fw_msc_volume_name = "senseBox";
+          static inline constexpr const char *usb_fw_msc_product_id = "Eye";
+          static inline constexpr const char *usb_fw_msc_volume_name = "senseBox_Eye";
+          static inline constexpr uint8_t builtin_led = 45;
           static inline constexpr uint8_t a14 = 14;
           static inline constexpr uint8_t d14 = 14;
           static inline constexpr uint8_t t14 = 14;
           static inline constexpr uint8_t a48 = 48;
           static inline constexpr uint8_t d48 = 48;
           static inline constexpr uint8_t t48 = 48;
+          static inline constexpr uint8_t sd_cs = 41;
+          static inline constexpr uint8_t sd_sw = 42;
+          static inline constexpr uint8_t sd_enable = 3;
+          static inline constexpr uint8_t usb_dn = 19;
+          static inline constexpr uint8_t usb_dp = 20;
+          static inline constexpr uint8_t lora_cs = 43;
+          static inline constexpr uint8_t lora_int = 44;
         };
       } // namespace sensebox_eye
     } // namespace esp32
@@ -15413,6 +15829,45 @@ namespace variants_collector
           static inline constexpr uint8_t rgb_builtin = 42;
         };
       } // namespace sparkfun_esp32_iot_redboard
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
+      namespace sparkfun_esp32c5_thing_plus
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:sparkfun_esp32c5_thing_plus";
+          static inline constexpr const char *name = "SparkFun ESP32-C5 Thing Plus";
+          static inline constexpr const char *build_mcu = "esp32c5";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 29;
+          static inline constexpr uint8_t pin_rgb_led = 27;
+          static inline constexpr uint8_t tx = 11;
+          static inline constexpr uint8_t rx = 12;
+          static inline constexpr uint8_t usb_dm = 13;
+          static inline constexpr uint8_t usb_dp = 14;
+          static inline constexpr uint8_t a1 = 2;
+          static inline constexpr uint8_t a2 = 3;
+          static inline constexpr uint8_t a3 = 4;
+          static inline constexpr uint8_t a4 = 5;
+          static inline constexpr uint8_t a5 = 6;
+          static inline constexpr uint8_t lp_sda = 2;
+          static inline constexpr uint8_t lp_scl = 3;
+          static inline constexpr uint8_t lp_rx = 4;
+          static inline constexpr uint8_t lp_tx = 5;
+          static inline constexpr uint8_t builtin_led = 56;
+          static inline constexpr uint8_t rgb_builtin = 56;
+          static inline constexpr uint8_t sda1 = 2;
+          static inline constexpr uint8_t scl1 = 3;
+        };
+      } // namespace sparkfun_esp32c5_thing_plus
     } // namespace esp32
   } // namespace esp32
 
@@ -20203,6 +20658,35 @@ namespace variants_collector
           static inline constexpr bool usb_serial = true;
         };
       } // namespace wt32_sc01_plus
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
+      namespace xteink_x4
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:xteink_x4";
+          static inline constexpr const char *name = "Xteink X4 eReader";
+          static inline constexpr const char *build_mcu = "esp32c3";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 22;
+          static inline constexpr uint8_t button = 3;
+          static inline constexpr uint8_t rx = 20;
+          static inline constexpr uint8_t epd_reset = 5;
+          static inline constexpr uint8_t epd_busy = 6;
+          static inline constexpr uint8_t epd_dc = 4;
+          static inline constexpr uint8_t sd_cs = 12;
+          static inline constexpr uint8_t a1 = 1;
+          static inline constexpr uint8_t a2 = 2;
+        };
+      } // namespace xteink_x4
     } // namespace esp32
   } // namespace esp32
 
