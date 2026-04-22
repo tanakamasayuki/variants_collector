@@ -515,6 +515,38 @@
             "ex_i2c_sda": 9
         }
     },
+    "m5stack:esp32:m5stack_papercolor": {
+        "pins": {
+            "in_i2c_scl": 2,
+            "in_i2c_sda": 3,
+            "port_a_pin1": 5,
+            "port_a_scl": 5,
+            "ex_i2c_scl": 5,
+            "port_a_pin2": 4,
+            "port_a_sda": 4,
+            "ex_i2c_sda": 4,
+            "sd_spi_sclk": 15,
+            "sd_spi_copi": 13,
+            "sd_spi_mosi": 13,
+            "sd_spi_cipo": 14,
+            "sd_spi_miso": 14,
+            "sd_spi_cs": 47,
+            "sd_spi_ss": 47,
+            "rgb_led": 21
+        }
+    },
+    "m5stack:esp32:m5stack_stopwatch": {
+        "pins": {
+            "in_i2c_scl": 22,
+            "in_i2c_sda": 21,
+            "port_a_pin1": 33,
+            "port_a_scl": 33,
+            "ex_i2c_scl": 33,
+            "port_a_pin2": 32,
+            "port_a_sda": 32,
+            "ex_i2c_sda": 32
+        }
+    },
     "m5stack:esp32:m5stack_atom": {
         "pins": {
             "in_i2c_scl": 21,
@@ -638,6 +670,24 @@
             "port_a_pin2": 53,
             "port_a_sda": 53,
             "ex_i2c_sda": 53
+        }
+    },
+    "m5stack:esp32:m5stack_stamp_s3bat": {
+        "pins": {
+            "in_i2c_scl": 47,
+            "in_i2c_sda": 48
+        }
+    },
+    "m5stack:esp32:m5stack_stamp_p4": {
+        "pins": {
+            "in_i2c_scl": 22,
+            "in_i2c_sda": 21,
+            "port_a_pin1": 33,
+            "port_a_scl": 33,
+            "ex_i2c_scl": 33,
+            "port_a_pin2": 32,
+            "port_a_sda": 32,
+            "ex_i2c_sda": 32
         }
     }
 }
