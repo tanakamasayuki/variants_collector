@@ -22158,6 +22158,14 @@ namespace variants_collector
           static inline constexpr uint8_t a2 = 3;
           static inline constexpr uint8_t a3 = 4;
           static inline constexpr uint8_t a4 = 5;
+          static inline constexpr uint8_t in_i2c_scl = 22;
+          static inline constexpr uint8_t in_i2c_sda = 21;
+          static inline constexpr uint8_t port_a_pin1 = 33;
+          static inline constexpr uint8_t port_a_scl = 33;
+          static inline constexpr uint8_t ex_i2c_scl = 33;
+          static inline constexpr uint8_t port_a_pin2 = 32;
+          static inline constexpr uint8_t port_a_sda = 32;
+          static inline constexpr uint8_t ex_i2c_sda = 32;
           static inline constexpr uint8_t builtin_led = 39;
           static inline constexpr uint8_t rgb_builtin = 39;
         };

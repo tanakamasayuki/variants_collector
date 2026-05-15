@@ -689,5 +689,17 @@
             "port_a_sda": 32,
             "ex_i2c_sda": 32
         }
+    },
+    "m5stack:esp32:m5stack_nano_h2": {
+        "pins": {
+            "in_i2c_scl": 22,
+            "in_i2c_sda": 21,
+            "port_a_pin1": 33,
+            "port_a_scl": 33,
+            "ex_i2c_scl": 33,
+            "port_a_pin2": 32,
+            "port_a_sda": 32,
+            "ex_i2c_sda": 32
+        }
     }
 }
