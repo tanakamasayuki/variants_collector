@@ -537,6 +537,18 @@
     },
     "m5stack:esp32:m5stack_stopwatch": {
         "pins": {
+            "in_i2c_scl": 48,
+            "in_i2c_sda": 47,
+            "port_a_pin1": 11,
+            "port_a_scl": 11,
+            "ex_i2c_scl": 11,
+            "port_a_pin2": 10,
+            "port_a_sda": 10,
+            "ex_i2c_sda": 10
+        }
+    },
+    "m5stack:esp32:m5stack_atom": {
+        "pins": {
             "in_i2c_scl": 22,
             "in_i2c_sda": 21,
             "port_a_pin1": 33,
@@ -545,19 +557,6 @@
             "port_a_pin2": 32,
             "port_a_sda": 32,
             "ex_i2c_sda": 32
-        }
-    },
-    "m5stack:esp32:m5stack_atom": {
-        "pins": {
-            "in_i2c_scl": 21,
-            "in_i2c_sda": 25,
-            "port_a_pin1": 32,
-            "port_a_scl": 32,
-            "ex_i2c_scl": 32,
-            "port_a_pin2": 26,
-            "port_a_sda": 26,
-            "ex_i2c_sda": 26,
-            "rgb_led": 27
         }
     },
     "m5stack:esp32:m5stack_timer_cam": {

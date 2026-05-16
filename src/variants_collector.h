@@ -21126,15 +21126,14 @@ namespace variants_collector
           static inline constexpr uint8_t dac2 = 26;
           static inline constexpr uint8_t adc1 = 35;
           static inline constexpr uint8_t adc2 = 36;
-          static inline constexpr uint8_t in_i2c_scl = 21;
-          static inline constexpr uint8_t in_i2c_sda = 25;
-          static inline constexpr uint8_t port_a_pin1 = 32;
-          static inline constexpr uint8_t port_a_scl = 32;
-          static inline constexpr uint8_t ex_i2c_scl = 32;
-          static inline constexpr uint8_t port_a_pin2 = 26;
-          static inline constexpr uint8_t port_a_sda = 26;
-          static inline constexpr uint8_t ex_i2c_sda = 26;
-          static inline constexpr uint8_t rgb_led = 27;
+          static inline constexpr uint8_t in_i2c_scl = 22;
+          static inline constexpr uint8_t in_i2c_sda = 21;
+          static inline constexpr uint8_t port_a_pin1 = 33;
+          static inline constexpr uint8_t port_a_scl = 33;
+          static inline constexpr uint8_t ex_i2c_scl = 33;
+          static inline constexpr uint8_t port_a_pin2 = 32;
+          static inline constexpr uint8_t port_a_sda = 32;
+          static inline constexpr uint8_t ex_i2c_sda = 32;
         };
       } // namespace m5stack_atom
     } // namespace esp32
@@ -23267,14 +23266,14 @@ namespace variants_collector
           static inline constexpr uint8_t g42 = 42;
           static inline constexpr uint8_t adc1 = 7;
           static inline constexpr uint8_t adc2 = 8;
-          static inline constexpr uint8_t in_i2c_scl = 22;
-          static inline constexpr uint8_t in_i2c_sda = 21;
-          static inline constexpr uint8_t port_a_pin1 = 33;
-          static inline constexpr uint8_t port_a_scl = 33;
-          static inline constexpr uint8_t ex_i2c_scl = 33;
-          static inline constexpr uint8_t port_a_pin2 = 32;
-          static inline constexpr uint8_t port_a_sda = 32;
-          static inline constexpr uint8_t ex_i2c_sda = 32;
+          static inline constexpr uint8_t in_i2c_scl = 48;
+          static inline constexpr uint8_t in_i2c_sda = 47;
+          static inline constexpr uint8_t port_a_pin1 = 11;
+          static inline constexpr uint8_t port_a_scl = 11;
+          static inline constexpr uint8_t ex_i2c_scl = 11;
+          static inline constexpr uint8_t port_a_pin2 = 10;
+          static inline constexpr uint8_t port_a_sda = 10;
+          static inline constexpr uint8_t ex_i2c_sda = 10;
           static inline constexpr const char *usb_manufacturer = "M5Stack";
           static inline constexpr const char *usb_product = "StopWatch";
           static inline constexpr uint8_t builtin_led = 97;
