@@ -28,7 +28,7 @@ $tableDefs = array(
     array('name' => '_pin_table_i2c_ex_in', 'count' => 4),
     array('name' => '_pin_table_port_bc', 'count' => 4),
     array('name' => '_pin_table_port_de', 'count' => 4),
-    array('name' => '_pin_table_spi_sd', 'count' => 4),
+    array('name' => '_pin_table_sd', 'count' => 6),
     array('name' => '_pin_table_other0', 'count' => 1),
     array('name' => '_pin_table_other1', 'count' => 1),
     array('name' => '_pin_table_mbus', 'count' => 30),
