@@ -6595,6 +6595,11 @@ namespace variants_collector
           static inline constexpr uint8_t board_sdmmc_slot = 0;
           static inline constexpr uint8_t board_sdmmc_power_channel = 4;
           static inline constexpr uint8_t board_sdmmc_power_pin = 45;
+          static inline constexpr uint8_t board_periman_io_ldo_auto = 1;
+          static inline constexpr uint8_t board_periman_io_ldo0_channel = 4;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_min = 39;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_max = 48;
+          static inline constexpr uint16_t board_periman_io_ldo0_voltage_mv = 3300;
           static inline constexpr uint8_t board_sdio_esp_hosted_clk = 18;
           static inline constexpr uint8_t board_sdio_esp_hosted_cmd = 19;
           static inline constexpr uint8_t board_sdio_esp_hosted_d0 = 14;
@@ -6656,6 +6661,11 @@ namespace variants_collector
           static inline constexpr uint8_t board_sdmmc_slot = 0;
           static inline constexpr uint8_t board_sdmmc_power_channel = 4;
           static inline constexpr uint8_t board_sdmmc_power_pin = 45;
+          static inline constexpr uint8_t board_periman_io_ldo_auto = 1;
+          static inline constexpr uint8_t board_periman_io_ldo0_channel = 4;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_min = 39;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_max = 48;
+          static inline constexpr uint16_t board_periman_io_ldo0_voltage_mv = 3300;
           static inline constexpr uint8_t lcd_bl_off_level = !1;
           static inline constexpr bool lcd_rst_active_high = true;
           static inline constexpr uint8_t board_sdmmc_power_on_level = 0;
@@ -6712,6 +6722,11 @@ namespace variants_collector
           static inline constexpr uint8_t board_sdmmc_slot = 0;
           static inline constexpr uint8_t board_sdmmc_power_channel = 4;
           static inline constexpr uint8_t board_sdmmc_power_pin = 45;
+          static inline constexpr uint8_t board_periman_io_ldo_auto = 1;
+          static inline constexpr uint8_t board_periman_io_ldo0_channel = 4;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_min = 39;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_max = 48;
+          static inline constexpr uint16_t board_periman_io_ldo0_voltage_mv = 3300;
           static inline constexpr uint8_t lcd_bl_off_level = !1;
           static inline constexpr bool lcd_rst_active_high = true;
           static inline constexpr uint8_t board_sdmmc_power_on_level = 0;
@@ -6766,6 +6781,11 @@ namespace variants_collector
           static inline constexpr uint8_t t11 = 13;
           static inline constexpr uint8_t t12 = 14;
           static inline constexpr uint8_t t13 = 15;
+          static inline constexpr uint8_t board_periman_io_ldo_auto = 1;
+          static inline constexpr uint8_t board_periman_io_ldo0_channel = 4;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_min = 39;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_max = 48;
+          static inline constexpr uint16_t board_periman_io_ldo0_voltage_mv = 3300;
           static inline constexpr uint8_t board_sdio_esp_hosted_reset = 54;
           static inline constexpr uint8_t board_sdio_esp_hosted_boot = 53;
           static inline constexpr uint8_t board_sdio_esp_hosted_cmd = 52;
@@ -14654,12 +14674,12 @@ namespace variants_collector
   {
     namespace esp32
     {
-      namespace ozobot_circuit_kit
+      namespace ozobot_drvkit
       {
         struct Info
         {
-          static inline constexpr const char *fqbn = "esp32:esp32:ozobot_circuit_kit";
-          static inline constexpr const char *name = "Ozobot circuit kit";
+          static inline constexpr const char *fqbn = "esp32:esp32:ozobot_drvkit";
+          static inline constexpr const char *name = "Ozobot DRVKit";
           static inline constexpr const char *build_mcu = "esp32s3";
         };
 
@@ -14702,7 +14722,7 @@ namespace variants_collector
           static inline constexpr uint8_t a8 = 32;
           static inline constexpr uint8_t a9 = 33;
           static inline constexpr const char *usb_manufacturer = "OZOEDU";
-          static inline constexpr const char *usb_product = "Ozobot circuit kit";
+          static inline constexpr const char *usb_product = "Ozobot DRVKit";
           static inline constexpr bool usb_serial = true;
           static inline constexpr uint8_t tx = 43;
           static inline constexpr uint8_t rx = 44;
@@ -14713,7 +14733,7 @@ namespace variants_collector
           static inline constexpr uint8_t button = 0;
           static inline constexpr uint8_t rgb_led = 42;
         };
-      } // namespace ozobot_circuit_kit
+      } // namespace ozobot_drvkit
     } // namespace esp32
   } // namespace esp32
 
@@ -15695,6 +15715,54 @@ namespace variants_collector
           static inline constexpr uint8_t rgb_builtin = 51;
         };
       } // namespace soldered_nula_deepsleep_esp32s3
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
+      namespace soldered_nula_dual_esp32c5
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:soldered_nula_dual_esp32c5";
+          static inline constexpr const char *name = "Soldered NULA Dual ESP32C5";
+          static inline constexpr const char *build_mcu = "esp32c5";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 29;
+          static inline constexpr uint8_t pin_rgb_led = 8;
+          static inline constexpr uint8_t tx = 11;
+          static inline constexpr uint8_t rx = 12;
+          static inline constexpr uint8_t a1 = 1;
+          static inline constexpr uint8_t a2 = 2;
+          static inline constexpr uint8_t a3 = 3;
+          static inline constexpr uint8_t a4 = 4;
+          static inline constexpr uint8_t a5 = 5;
+          static inline constexpr uint8_t a6 = 6;
+          static inline constexpr uint8_t a7 = 7;
+          static inline constexpr uint8_t a8 = 8;
+          static inline constexpr uint8_t a9 = 9;
+          static inline constexpr uint8_t a10 = 10;
+          static inline constexpr uint8_t a13 = 13;
+          static inline constexpr uint8_t a14 = 14;
+          static inline constexpr uint8_t a23 = 23;
+          static inline constexpr uint8_t a24 = 24;
+          static inline constexpr uint8_t a25 = 25;
+          static inline constexpr uint8_t a28 = 28;
+          static inline constexpr uint8_t lp_sda = 2;
+          static inline constexpr uint8_t lp_scl = 3;
+          static inline constexpr uint8_t lp_rx = 4;
+          static inline constexpr uint8_t lp_tx = 5;
+          static inline constexpr uint8_t builtin_led = 37;
+          static inline constexpr uint8_t rgb_builtin = 37;
+          static inline constexpr uint8_t sda1 = 2;
+          static inline constexpr uint8_t scl1 = 3;
+        };
+      } // namespace soldered_nula_dual_esp32c5
     } // namespace esp32
   } // namespace esp32
 
@@ -20166,6 +20234,70 @@ namespace variants_collector
           static inline constexpr uint8_t rx1 = 44;
         };
       } // namespace waveshare_esp32s3_touch_lcd_128
+    } // namespace esp32
+  } // namespace esp32
+
+  namespace esp32
+  {
+    namespace esp32
+    {
+      namespace waveshare_p4_poe_eth
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "esp32:esp32:waveshare_p4_poe_eth";
+          static inline constexpr const char *name = "Waveshare ESP32-P4-POE-ETH";
+          static inline constexpr const char *build_mcu = "esp32p4";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 55;
+          static inline constexpr uint8_t tx = 37;
+          static inline constexpr uint8_t rx = 38;
+          static inline constexpr uint8_t a1 = 17;
+          static inline constexpr uint8_t a2 = 18;
+          static inline constexpr uint8_t a3 = 19;
+          static inline constexpr uint8_t a4 = 20;
+          static inline constexpr uint8_t a5 = 21;
+          static inline constexpr uint8_t a6 = 22;
+          static inline constexpr uint8_t a7 = 23;
+          static inline constexpr uint8_t a13 = 54;
+          static inline constexpr uint8_t t0 = 2;
+          static inline constexpr uint8_t t1 = 3;
+          static inline constexpr uint8_t t2 = 4;
+          static inline constexpr uint8_t t3 = 5;
+          static inline constexpr uint8_t t4 = 6;
+          static inline constexpr uint8_t t12 = 14;
+          static inline constexpr uint8_t t13 = 15;
+          static inline constexpr uint8_t eth_phy_addr = 1;
+          static inline constexpr uint8_t eth_phy_mdc = 31;
+          static inline constexpr uint8_t eth_phy_mdio = 52;
+          static inline constexpr uint8_t eth_phy_power = 51;
+          static inline constexpr uint8_t eth_rmii_tx_en = 49;
+          static inline constexpr uint8_t eth_rmii_tx0 = 34;
+          static inline constexpr uint8_t eth_rmii_tx1 = 35;
+          static inline constexpr uint8_t eth_rmii_rx0 = 29;
+          static inline constexpr uint8_t eth_rmii_rx1_en = 30;
+          static inline constexpr uint8_t eth_rmii_crs_dv = 28;
+          static inline constexpr uint8_t eth_rmii_clk = 50;
+          static inline constexpr uint8_t board_sdmmc_slot = 0;
+          static inline constexpr uint8_t board_sdmmc_power_channel = 4;
+          static inline constexpr uint8_t board_sdmmc_power_pin = 45;
+          static inline constexpr uint8_t board_periman_io_ldo_auto = 1;
+          static inline constexpr uint8_t board_periman_io_ldo0_channel = 4;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_min = 39;
+          static inline constexpr uint8_t board_periman_io_ldo0_gpio_max = 48;
+          static inline constexpr uint16_t board_periman_io_ldo0_voltage_mv = 3300;
+          static inline constexpr uint8_t i2s_mclk = 13;
+          static inline constexpr uint8_t i2s_bclk = 12;
+          static inline constexpr uint8_t i2s_lrclk = 10;
+          static inline constexpr uint8_t i2s_dout = 11;
+          static inline constexpr uint8_t i2s_din = 9;
+          static inline constexpr uint8_t pa_power = 53;
+          static inline constexpr uint8_t board_sdmmc_power_on_level = 0;
+        };
+      } // namespace waveshare_p4_poe_eth
     } // namespace esp32
   } // namespace esp32
 
