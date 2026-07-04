@@ -23898,6 +23898,13 @@ namespace variants_collector
           static inline constexpr uint8_t t11 = 13;
           static inline constexpr uint8_t t12 = 14;
           static inline constexpr uint8_t t13 = 15;
+          static inline constexpr uint8_t board_sdmmc_slot = 1;
+          static inline constexpr uint8_t sdmmc_clk = 11;
+          static inline constexpr uint8_t sdmmc_cmd = 10;
+          static inline constexpr uint8_t sdmmc_d0 = 12;
+          static inline constexpr uint8_t sdmmc_d1 = 13;
+          static inline constexpr uint8_t sdmmc_d2 = 8;
+          static inline constexpr uint8_t sdmmc_d3 = 9;
           static inline constexpr uint8_t board_sdio_esp_hosted_clk = 12;
           static inline constexpr uint8_t board_sdio_esp_hosted_cmd = 13;
           static inline constexpr uint8_t board_sdio_esp_hosted_d0 = 11;
