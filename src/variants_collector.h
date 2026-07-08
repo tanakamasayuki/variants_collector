@@ -22725,6 +22725,40 @@ namespace variants_collector
   {
     namespace esp32
     {
+      namespace m5stack_stamp_c5
+      {
+        struct Info
+        {
+          static inline constexpr const char *fqbn = "m5stack:esp32:m5stack_stamp_c5";
+          static inline constexpr const char *name = "M5StampC5";
+          static inline constexpr const char *build_mcu = "esp32c5";
+        };
+
+        struct Pins
+        {
+          static inline constexpr uint8_t pins_soc_gpio_pin_count = 29;
+          static inline constexpr uint8_t tx = 11;
+          static inline constexpr uint8_t rx = 12;
+          static inline constexpr uint8_t usb_dm = 13;
+          static inline constexpr uint8_t usb_dp = 14;
+          static inline constexpr uint8_t a1 = 2;
+          static inline constexpr uint8_t a2 = 3;
+          static inline constexpr uint8_t a3 = 4;
+          static inline constexpr uint8_t a4 = 5;
+          static inline constexpr uint8_t a5 = 6;
+          static inline constexpr uint8_t lp_sda = 2;
+          static inline constexpr uint8_t lp_scl = 3;
+          static inline constexpr uint8_t lp_rx = 4;
+          static inline constexpr uint8_t lp_tx = 5;
+        };
+      } // namespace m5stack_stamp_c5
+    } // namespace esp32
+  } // namespace m5stack
+
+  namespace m5stack
+  {
+    namespace esp32
+    {
       namespace m5stack_stamp_c6lora
       {
         struct Info
