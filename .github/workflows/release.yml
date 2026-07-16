@@ -1,15 +1,12 @@
+# This file is maintained in the shared release toolkit:
+# https://github.com/tanakamasayuki/arduino-library-release-toolkit
+# Do not edit it in individual projects. Make changes in the toolkit and sync them instead.
+
 name: Release
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
-      force_release:
-        description: "Force a release even when generated files have no changes"
-        required: false
-        default: false
-        type: boolean
       version_level:
         description: "Version component to bump when forcing a release (major, minor, patch)"
         required: false
@@ -27,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           persist-credentials: true
@@ -38,52 +35,76 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "8.2"
+      - name: Set up Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
 
-      - name: Generate variants data
+      - name: Plan version bump
+        id: version_plan
         run: |
-          php tools/collect.php
-          php tools/merge.php
-          php tools/generate_overrides_m5.php
-          php tools/merge.php
-          php tools/generate_header.php
+          LEVEL="${{ github.event.inputs.version_level || 'patch' }}"
+          OUT=$(python tools/bump_version.py --preview --level "$LEVEL")
+          VERSION=$(printf '%s\n' "$OUT" | sed -n '1p')
+          OLD_VERSION=$(printf '%s\n' "$OUT" | sed -n '3p')
+          echo "Preparing release: v${OLD_VERSION} -> v${VERSION} (${LEVEL})"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "old_version=$OLD_VERSION" >> "$GITHUB_OUTPUT"
+          echo "level=$LEVEL" >> "$GITHUB_OUTPUT"
 
-      - name: Detect generated changes
-        id: changes
+      - name: Run pre-bump hook
+        env:
+          RELEASE_OLD_VERSION: ${{ steps.version_plan.outputs.old_version }}
+          RELEASE_VERSION: ${{ steps.version_plan.outputs.version }}
+          RELEASE_TAG: v${{ steps.version_plan.outputs.version }}
+          RELEASE_LEVEL: ${{ steps.version_plan.outputs.level }}
+          RELEASE_PHASE: pre_bump
         run: |
-          if git diff --quiet -- tools/overrides_m5.json src/variants_collector.h; then
-            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          HOOK="tools/release_hooks/pre_bump.py"
+          if [ -f "$HOOK" ]; then
+            echo "Running $HOOK"
+            python "$HOOK"
           else
-            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo "No $HOOK; skipping."
           fi
 
       - name: Bump version
         id: version
-        if: steps.changes.outputs.has_changes == 'true' || github.event.inputs.force_release == 'true'
         run: |
-          if [ "${{ github.event.inputs.force_release }}" = "true" ]; then
-            LEVEL="${{ github.event.inputs.version_level || 'patch' }}"
-          else
-            LEVEL="patch"
-          fi
+          LEVEL="${{ steps.version_plan.outputs.level }}"
           OUT=$(python tools/bump_version.py --level "$LEVEL")
           VERSION=$(printf '%s\n' "$OUT" | sed -n '1p')
           HEADER=$(printf '%s\n' "$OUT" | sed -n '2p')
+          OLD_VERSION=$(printf '%s\n' "$OUT" | sed -n '3p')
+          if [ "$VERSION" != "${{ steps.version_plan.outputs.version }}" ] || \
+             [ "$OLD_VERSION" != "${{ steps.version_plan.outputs.old_version }}" ]; then
+            echo "Version changed while preparing the release."
+            exit 1
+          fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "version_header=$HEADER" >> "$GITHUB_OUTPUT"
+          echo "old_version=$OLD_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Run pre-version-commit hook
+        env:
+          RELEASE_OLD_VERSION: ${{ steps.version.outputs.old_version }}
+          RELEASE_VERSION: ${{ steps.version.outputs.version }}
+          RELEASE_TAG: v${{ steps.version.outputs.version }}
+          RELEASE_LEVEL: ${{ steps.version_plan.outputs.level }}
+          RELEASE_PHASE: pre_version_commit
+        run: |
+          HOOK="tools/release_hooks/pre_version_commit.py"
+          if [ -f "$HOOK" ]; then
+            echo "Running $HOOK"
+            python "$HOOK"
+          else
+            echo "No $HOOK; skipping."
+          fi
 
       - name: Stage files
-        if: steps.version.outcome == 'success'
         run: |
-          git add tools/overrides_m5.json
-          git add src/variants_collector.h
           git add library.properties
           if [ -f CHANGELOG.md ]; then
             git add CHANGELOG.md
@@ -95,32 +116,50 @@ jobs:
           fi
 
       - name: Commit changes
-        if: steps.version.outcome == 'success'
         run: |
           git commit -m "Release ${{ steps.version.outputs.version }}" || echo "No changes to commit."
 
       - name: Push default branch
-        if: steps.version.outcome == 'success'
         run: git push origin HEAD:"$DEFAULT_BRANCH"
 
       - name: Prepare release branch with release-only files
         id: release_branch
-        if: steps.version.outcome == 'success'
         env:
           VERSION: ${{ steps.version.outputs.version }}
+          RELEASE_OLD_VERSION: ${{ steps.version.outputs.old_version }}
+          RELEASE_VERSION: ${{ steps.version.outputs.version }}
+          RELEASE_TAG: v${{ steps.version.outputs.version }}
+          RELEASE_LEVEL: ${{ steps.version_plan.outputs.level }}
+          RELEASE_PHASE: pre_release_commit
         run: |
           git checkout -B "$RELEASE_BRANCH"
+          git rm -r --ignore-unmatch tests
           git ls-files 'examples/sketch.yaml' 'examples/**/sketch.yaml' | sort -u | xargs -r git add
+
+          HOOK="tools/release_hooks/pre_release_commit.py"
+          if [ -f "$HOOK" ]; then
+            echo "Running $HOOK"
+            python "$HOOK"
+          else
+            echo "No $HOOK; skipping."
+          fi
+
           if git diff --cached --quiet; then
             echo "No release-only changes to commit."
           else
             git commit -m "Release assets v${VERSION}"
           fi
+
+          if ! git diff --quiet; then
+            echo "Tracked files contain unstaged changes after the release commit."
+            git diff --stat
+            exit 1
+          fi
+
           echo "branch=$RELEASE_BRANCH" >> "$GITHUB_OUTPUT"
 
       - name: Build release archive
         id: archive
-        if: steps.version.outcome == 'success'
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           ARCHIVE="${{ github.event.repository.name }}-${VERSION}.zip"
@@ -129,15 +168,51 @@ jobs:
           TEMP_DIR="$(mktemp -d)"
 
           # Copy tracked files from the release branch working tree.
-          rsync -a --files-from=<(git ls-files) ./ "$TEMP_DIR/$PREFIX/"
+          rsync -a --files-from=<(git ls-files -- . ':!:tests' ':!:tests/**') ./ "$TEMP_DIR/$PREFIX/"
           (cd "$TEMP_DIR" && zip -r "$WORKDIR/$ARCHIVE" "$PREFIX")
           echo "archive=$ARCHIVE" >> "$GITHUB_OUTPUT"
+
+      - name: Build release notes
+        id: release_notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          python <<'PY'
+          import os
+          import pathlib
+          import re
+
+          version = os.environ["VERSION"]
+          changelog_path = pathlib.Path("CHANGELOG.md")
+          notes = ""
+
+          if changelog_path.exists():
+              content = changelog_path.read_text(encoding="utf-8")
+              pattern = re.compile(
+                  rf"^## {re.escape(version)}\s*$\n(?P<body>.*?)(?=^## |\Z)",
+                  re.MULTILINE | re.DOTALL,
+              )
+              match = pattern.search(content)
+              if match:
+                  notes = match.group("body").strip()
+
+          release_body = f"Release v{version}."
+          if notes:
+              release_body = f"{release_body}\n\n## Changelog\n{notes}"
+          else:
+              release_body = f"{release_body}\n\n- Library version bumped to v{version}."
+
+          output_path = pathlib.Path(os.environ["GITHUB_OUTPUT"])
+          with output_path.open("a", encoding="utf-8") as fh:
+              fh.write("body<<EOF\n")
+              fh.write(release_body)
+              fh.write("\nEOF\n")
+          PY
 
       - name: Create tag and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: create_tag_and_push
-        if: steps.version.outcome == 'success'
         run: |
           TAG="v${{ steps.version.outputs.version }}"
           git checkout "$RELEASE_BRANCH"
@@ -153,15 +228,22 @@ jobs:
 
       - name: Publish release
         if: steps.create_tag_and_push.outcome == 'success'
-        uses: softprops/action-gh-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.version.outputs.version }}
-          name: v${{ steps.version.outputs.version }}
-          body: |
-            Release.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: v${{ steps.version.outputs.version }}
+          ARCHIVE: ${{ steps.archive.outputs.archive }}
+          RELEASE_BODY: ${{ steps.release_notes.outputs.body }}
+          TARGET: ${{ steps.release_branch.outputs.branch }}
+        run: |
+          NOTES_FILE="$(mktemp)"
+          printf '%s\n' "$RELEASE_BODY" > "$NOTES_FILE"
 
-            - Library version bumped to v${{ steps.version.outputs.version }}.
-          files: |
-            ${{ steps.archive.outputs.archive }}
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --title "$TAG" --notes-file "$NOTES_FILE"
+            gh release upload "$TAG" "$ARCHIVE" --clobber
+          else
+            gh release create "$TAG" "$ARCHIVE" \
+              --title "$TAG" \
+              --notes-file "$NOTES_FILE" \
+              --target "$TARGET"
+          fi
